@@ -14,15 +14,24 @@ Accept Cryptocurrencies on your Opencart store with Coinbase Commerce module.
     - Litecoin
 
 ## Create an Account
-If you don't have a Coinbase Commerce account, <a href="https://commerce.coinbase.com/signup">Sign Up</a>.
+If you don't have a Coinbase Commerce account, <a href="https://commerce.coinbase.com/dashboard/settings">Sign Up</a>.
 
 ## Manual installation
 
 ### Download the module and unzip it in the root directiry of your "Opencart Project".
+### Clear Opencart Cache to apply the changes
+1. Open your store content via File Manager or FTP.
+2. Go to the folder system/storage/cache/.
+3. Delete all files except index.html
 
 ## Admin installation
 
 ### Goto -> Extensions -> installer -> Click the upload button and locate the extension file of type ".ocmod".
+Note: If extension is not showing after installation. Perform above step again (upload extension).
+### Clear Opencart Cache to apply the changes
+1. Open your store content via File Manager or FTP.
+2. Go to the folder system/storage/cache/.
+3. Delete all files except index.html
 
 ## Generate API Credentials
 
@@ -31,11 +40,11 @@ If you don't have a Coinbase Commerce account, <a href="https://commerce.coinbas
 
 ## Enable Module in Opencart Admin
 
-1.	Generate the API’s using the Sign in or Sign Up Page.
-2.	Configure module in Extensions -> Extensions -> Choose the extension type.
-3.	Select “Payments” from dropdown.
-4.	Scroll down to 'Coinbase Commerce'.
-5.	Payment Method Enabled - Set "Enabled" to activate it.
+1.	Configure module in Extensions -> Extensions -> Choose the extension type.
+2.	Select “Payments” from dropdown.
+3.	Scroll down to 'Coinbase Commerce'. Note: If extension is not showing "clear the cache"
+4.	Payment Method Enabled - Set "Enabled" to activate it.
+5.	Generate the API’s using the Sign in or Sign Up Page.
 6.	API Key - paste the API key. 
 7.	API Secret - paste the API secret.
 8.	Test Mode – No (By Default).
