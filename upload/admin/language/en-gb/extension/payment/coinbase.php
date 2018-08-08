@@ -10,13 +10,13 @@ $_['text_api_test_mode_no'] = 'No';
 $_['text_api_credentials_section'] = 'API credentials';
 $_['text_order_statuses_section'] = 'Order Statuses';
 $_['text_coinbase_preview_heading'] = 'Accept Cryptocurrency Payments on OpenCart - Coinbase Commerce';
-$_['text_coinbase_preview_intro'] = 'Coinbase Commerce helps you accept CryptoCurrency payments on your OpenCart online store. For any inquiries or questions regarding Coinbase Commerce extension please email us at <a href="mailto:support@CoinBase.io">support@Coinbase.io</a>';
+$_['text_coinbase_preview_intro'] = 'Coinbase Commerce helps you accept cryptocurrency payments on your OpenCart online store. For any inquiries or questions regarding Coinbase Commerce extension please email us at <a href="mailto:support@CoinBase.io">commerce@coinbase.com</a>';
 $_['text_coinbase_api_status'] = 'Status';
 $_['text_sign_in'] = 'Sign In';
 $_['text_sign_up'] = 'Sign Up';
-$_['text_support'] = 'Support';
+$_['text_support'] = 'Docs';
 $_['text_order_settings_section'] = 'Order Settings';
-$_['text_coinbase'] = '<a href="https://commerce.coinbase.com/" target="_blank" rel="noopener"><img src="view/image/payment/Coinbase.png" alt="Coinbase" title="Coinbase" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_coinbase'] = '<a href="https://commerce.coinbase.com/" target="_blank" rel="noopener"><img src="view/image/payment/Coinbase.png" alt="Coinbase Commerce" title="Coinbase Commerce" /></a>';
 
 $_['entry_status'] = 'Payment Method Enabled';
 $_['entry_api_test_mode'] = 'Test Mode';
