@@ -25,6 +25,7 @@ class ModelExtensionPaymentCoinbase extends Model
         $settings['payment_coinbase_api_test_mode'] = 0;
         $settings['payment_coinbase_order_status_id'] = 1;
         $settings['payment_coinbase_completed_status_id'] = 2;
+        $settings['payment_coinbase_pending_status_id'] = 1;
         $settings['payment_coinbase_resolved_status_id'] = 5;
         $settings['payment_coinbase_unresolved_status_id'] = 8;
         $settings['payment_coinbase_expired_status_id'] = 14;

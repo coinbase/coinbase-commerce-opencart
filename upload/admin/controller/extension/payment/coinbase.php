@@ -67,6 +67,7 @@ class ControllerExtensionPaymentCoinbase extends Controller
             'payment_coinbase_api_test_mode',
             'payment_coinbase_order_status_id',
             'payment_coinbase_completed_status_id',
+            'payment_coinbase_pending_status_id',
             'payment_coinbase_resolved_status_id',
             'payment_coinbase_unresolved_status_id',
             'payment_coinbase_expired_status_id',

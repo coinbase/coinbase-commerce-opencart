@@ -35,12 +35,13 @@ class ControllerExtensionPaymentCoinbase extends Controller
 
         //Json Data Curl Request
         $data = json_encode([
-            "name" => $order_info['store_name'],
+            "name" => $order_info['store_name'] . ' order #' . $order_info['order_id'],
             "description" => "Purchased through Coinbase Commerce",
             "local_price" => $pricing,
             "pricing_type" => "fixed_price",
             "metadata" => $metaData,
-            "redirect_url" => $this->url->link('extension/payment/coinbase/redirect&orderId=' . $order_info["order_id"], true)
+            "redirect_url" => $this->url->link('extension/payment/coinbase/redirect&orderId=' . $order_info["order_id"], true),
+            "cancel_url" => $this->url->link('checkout/checkout')
         ]);
 
         //Receive Curl Response
@@ -157,7 +158,10 @@ class ControllerExtensionPaymentCoinbase extends Controller
                 $status_message = 'Coinbase Commerce Status ' . $data['coinbaseStatus'] . ' Type ' . $data['type'];
 
                 if ($data['coinbaseStatus'] == 'NEW' && $data['type'] == 'charge:created') {
-                    $order_status = 'coinbase_created_status_id';  //Pending
+                    $order_status = 'coinbase_created_status_id';  //Created
+                } elseif ($data['coinbaseStatus'] == 'PENDING' && $data['type'] == 'charge:pending') {
+                    $order_status = 'payment_coinbase_pending_status_id';  //Pending
+                    $recordToUpdate['fields']['coinbase_commerce_status'] = $data['coinbaseStatus'];
                 } elseif ($data['coinbaseStatus'] == 'COMPLETED' && $data['type'] == 'charge:confirmed') {
                     $order_status = 'payment_coinbase_completed_status_id';  //Processing
                     $recordToUpdate['fields']['coinbase_commerce_status'] = $data['coinbaseStatus'];
