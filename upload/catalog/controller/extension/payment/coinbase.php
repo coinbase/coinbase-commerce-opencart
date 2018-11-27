@@ -32,6 +32,7 @@ class ControllerExtensionPaymentCoinbase extends Controller
         $metaData["customer_name"] = $order_info['firstname'] . " " . $order_info['lastname'];
         $metaData["customer_email"] = $order_info['email'];
         $metaData["store_increment_id"] = $order_info['order_id'];
+        $metaData["source"] = "opencart";
 
         //Json Data Curl Request
         $data = json_encode([
