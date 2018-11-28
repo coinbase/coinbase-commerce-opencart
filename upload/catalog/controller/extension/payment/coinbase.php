@@ -24,7 +24,12 @@ class ControllerExtensionPaymentCoinbase extends Controller
         //$secret_key = md5(uniqid(rand(), true));
 
         //Pricing
-        $pricing["amount"] = $order_info['total'];
+        $pricing["amount"] = $this->currency->format(
+            $order_info['total'],
+            $order_info['currency_code'],
+            $order_info['currency_value'],
+            false
+        );
         $pricing["currency"] = $order_info['currency_code'];
 
         //Metadata attached with Charge
