@@ -78,3 +78,6 @@ To resolve the order status of “Denied” Order. Merchant/Admin will have to f
 
 ## License
 [Open Source License](LICENSE)
+
+## Integrate with other e-commerce platforms
+[Coinbase Commerce Integrations](https://commerce.coinbase.com/integrate)
