@@ -66,7 +66,7 @@ class ControllerExtensionPaymentCoinbase extends Controller
             //'coinbase_commerce_coins_received' => $result['payments']['value']['local']['amount'],
             //'coinbase_commerce_received_currency' => $result['payments']['value']['local']['currency']
         ));
-        $this->model_checkout_order->addOrderHistory($order_info['order_id'], $this->config->get('payment_coinbase_order_status_id'));
+        $this->model_checkout_order->addOrderHistory($order_info['order_id'], $this->config->get('coinbase_order_status_id'));
             //var_dump($result);
             //exit();
         $this->response->redirect($result['data']['hosted_url']);
@@ -134,7 +134,7 @@ class ControllerExtensionPaymentCoinbase extends Controller
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
-                'X-CC-Api-Key: ' . $this->config->get('payment_coinbase_api_key'),
+                'X-CC-Api-Key: ' . $this->config->get('coinbase_api_key'),
                 'X-CC-Version: 2018-03-22')
         );
         $response = json_decode(curl_exec($curl), TRUE);
@@ -145,7 +145,7 @@ class ControllerExtensionPaymentCoinbase extends Controller
     public function authenticate($payload, $signature = NULL)
     {
         //print_r($signature);
-        $key = $this->config->get('payment_coinbase_api_secret');
+        $key = $this->config->get('coinbase_api_secret');
         $headerSignature = isset($signature) ? $signature : $this->request->server['HTTP_X_CC_WEBHOOK_SIGNATURE'];
         $computedSignature = hash_hmac('sha256', $payload, $key);
         return $headerSignature === $computedSignature;
@@ -166,18 +166,18 @@ class ControllerExtensionPaymentCoinbase extends Controller
                 if ($data['coinbaseStatus'] == 'NEW' && $data['type'] == 'charge:created') {
                     $order_status = 'coinbase_created_status_id';  //Created
                 } elseif ($data['coinbaseStatus'] == 'PENDING' && $data['type'] == 'charge:pending') {
-                    $order_status = 'payment_coinbase_pending_status_id';  //Pending
+                    $order_status = 'coinbase_pending_status_id';  //Pending
                     $recordToUpdate['fields']['coinbase_commerce_status'] = $data['coinbaseStatus'];
                 } elseif ($data['coinbaseStatus'] == 'COMPLETED' && $data['type'] == 'charge:confirmed') {
-                    $order_status = 'payment_coinbase_completed_status_id';  //Processing
+                    $order_status = 'coinbase_completed_status_id';  //Processing
                     $recordToUpdate['fields']['coinbase_commerce_status'] = $data['coinbaseStatus'];
                 } elseif ($data['coinbaseStatus'] == 'RESOLVED') {
-                    $order_status = 'payment_coinbase_resolved_status_id'; //Complete
+                    $order_status = 'coinbase_resolved_status_id'; //Complete
                 } elseif ($data['coinbaseStatus'] == 'UNRESOLVED') {
-                    $order_status = 'payment_coinbase_unresolved_status_id'; //Denied
+                    $order_status = 'coinbase_unresolved_status_id'; //Denied
                     $status_message .= ' Context ' . $data['coinbaseContext'];
                 } elseif ($data['type'] == 'charge:failed' && $data['coinbaseStatus'] == 'EXPIRED') {
-                    $order_status = 'payment_coinbase_expired_status_id'; //Expired
+                    $order_status = 'coinbase_expired_status_id'; //Expired
                     $status_message .= ' Context ' . $data['coinbaseContext'];
                 }
 
