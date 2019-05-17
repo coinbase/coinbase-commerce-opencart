@@ -12,6 +12,7 @@ Accept Cryptocurrencies on your Opencart store with Coinbase Commerce module.
     - Bitcoin Cash
     - Ethereum
     - Litecoin
+    - USD Coin
 
 ## Create an Account
 If you don't have a Coinbase Commerce account, <a href="https://commerce.coinbase.com/dashboard/settings">Sign Up</a>.
