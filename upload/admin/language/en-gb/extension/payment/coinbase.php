@@ -10,7 +10,7 @@ $_['text_api_test_mode_no'] = 'No';
 $_['text_api_credentials_section'] = 'API credentials';
 $_['text_order_statuses_section'] = 'Order Statuses';
 $_['text_coinbase_preview_heading'] = 'Accept Cryptocurrency Payments on OpenCart - Coinbase Commerce';
-$_['text_coinbase_preview_intro'] = 'Coinbase Commerce helps you accept cryptocurrency payments on your OpenCart online store. For any inquiries or questions regarding Coinbase Commerce extension please email us at <a href="mailto:support@CoinBase.io">commerce@coinbase.com</a>';
+$_['text_coinbase_preview_intro'] = 'Coinbase Commerce helps you accept cryptocurrency payments on your OpenCart online store. For any inquiries or questions regarding Coinbase Commerce extension please email us at <a href="mailto:commerce@coinbase.com">commerce@coinbase.com</a>';
 $_['text_coinbase_api_status'] = 'Status';
 $_['text_sign_in'] = 'Sign In';
 $_['text_sign_up'] = 'Sign Up';
