@@ -10,6 +10,7 @@ Accept Cryptocurrencies on your Opencart store with Coinbase Commerce module.
 3. Following Cryptocurrencies are accepted by the Coinbase Commerce.
     - Bitcoin
     - Bitcoin Cash
+    - DAI
     - Ethereum
     - Litecoin
     - USD Coin
